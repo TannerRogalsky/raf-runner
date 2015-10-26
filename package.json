@@ -1,7 +1,7 @@
 {
   "name": "raf-runner",
   "version": "1.0.1",
-  "description": "An abstraction around requestionAnimationFrame.",
+  "description": "Simple API for running a function in a requestAnimationFrame loop.",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {

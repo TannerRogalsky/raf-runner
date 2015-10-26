@@ -1,2 +1,2 @@
 # raf-runner
-An abstraction around requestionAnimationFrame.
+Simple API for running a function in a requestAnimationFrame loop.
