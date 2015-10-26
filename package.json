@@ -1,0 +1,62 @@
+{
+  "name": "raf-runner",
+  "version": "1.0.0",
+  "description": "An abstraction around requestionAnimationFrame.",
+  "main": "lib/index.js",
+  "jsnext:main": "src/index.js",
+  "scripts": {
+    "clean": "rimraf lib dist",
+    "test": "npm run build:tests && mocha-phantomjs spec/index.html",
+    "lint": "eslint src spec",
+    "check": "npm run lint && npm run test",
+    "build:lib": "babel src --out-dir lib",
+    "build:tests": "webpack spec/index.js spec/dist/tests.js --config webpack.config.test.js",
+    "build:umd": "webpack src/index.js dist/raf-runner.js --config webpack.config.development.js",
+    "build:umd:min": "webpack src/index.js dist/raf-runner.min.js --config webpack.config.production.js",
+    "build": "npm run build:lib && npm run build:umd && npm run build:umd:min",
+    "preversion": "npm run clean && npm run check",
+    "version": "npm run build",
+    "postversion": "git push && git push --tags && npm run clean",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TannerRogalsky/raf-runner.git"
+  },
+  "keywords": [
+    "requestAnimationFrame",
+    "gameloop",
+    "game loop",
+    "timer"
+  ],
+  "author": "Tanner Rogalsky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TannerRogalsky/raf-runner/issues"
+  },
+  "homepage": "https://github.com/TannerRogalsky/raf-runner#readme",
+  "dependencies": {
+    "raf-timer": "^1.1.1"
+  },
+  "devDependencies": {
+    "babel": "^5.8.29",
+    "babel-loader": "^5.3.2",
+    "corejs": "^0.1.4",
+    "eslint": "^1.7.3",
+    "expect": "^1.12.2",
+    "mocha-loader": "^0.7.1",
+    "mocha-phantomjs": "^3.6.0",
+    "phantomjs": "^1.9.18",
+    "rimraf": "^2.4.3",
+    "webpack": "^1.12.2"
+  },
+  "npmName": "raf-runner",
+  "npmFileMap": [
+    {
+      "basePath": "/dist/",
+      "files": [
+        "*.js"
+      ]
+    }
+  ]
+}
