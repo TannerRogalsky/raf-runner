@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/TannerRogalsky/raf-runner#readme",
   "dependencies": {
-    "raf-timer": "^1.1.1"
+    "raf-timer": "^1.1.5"
   },
   "devDependencies": {
     "babel": "^5.8.29",
