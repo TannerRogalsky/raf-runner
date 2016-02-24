@@ -1,6 +1,6 @@
 {
   "name": "raf-runner",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple API for running a function in a requestAnimationFrame loop.",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
